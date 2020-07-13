@@ -1,0 +1,38 @@
+using System;
+
+namespace Company
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter a company name: ");
+            string companyName = Console.ReadLine();
+            Console.Write("Enter a company address: ");
+            string companyAddress = Console.ReadLine();
+            Console.Write("Enter a telephone number: ");
+            string telephone = Console.ReadLine();
+            Console.Write("Enter a fax number: ");
+            string faxNumber = Console.ReadLine();
+            Console.Write("Enter a website: ");
+            string website = Console.ReadLine();
+            Console.Write("Enter the manager's first name: ");
+            string managerFName = Console.ReadLine();
+            Console.Write("Enter the manager's last name: ");
+            string managerLName = Console.ReadLine();
+            Console.Write("Enter the manager's number: ");
+            string managerNumber = Console.ReadLine();
+            string managerName = managerFName + " " + managerLName;
+
+            Console.WriteLine($"Company name: {companyName}\n" +
+                $"Company address: {companyAddress}\n" +
+                $"Telephone number: {telephone}\n" +
+                $"Fax number: {faxNumber}\n" +
+                $"Company website: {website}\n" +
+                $"Manager: {managerName}\n" +
+                $"Manager's phone: {managerNumber}");
+
+        }
+
+    }
+}
