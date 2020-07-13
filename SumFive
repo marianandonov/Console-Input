@@ -1,0 +1,63 @@
+
+using System;
+
+namespace SumFice
+{
+    class SumFive
+    {
+        static void Main(string[] args)
+        {
+            bool tryParse = false;
+
+            do
+            {
+                Console.Write("Enter first number: ");
+                tryParse = int.TryParse(Console.ReadLine(), out int num1);
+                if(tryParse == true)
+                {
+                    Console.Write("Enter second number: ");
+                    tryParse = int.TryParse(Console.ReadLine(), out int num2);
+                    if (tryParse == true)
+                    {
+                        Console.Write("Enter third number: ");
+                        tryParse = int.TryParse(Console.ReadLine(), out int num3);
+                        if (tryParse == true)
+                        {
+                            Console.Write("Enter fourth number: ");
+                            tryParse = int.TryParse(Console.ReadLine(), out int num4);
+                            if (tryParse == true)
+                            {
+                                Console.Write("Enter fifth number: ");
+                                tryParse = int.TryParse(Console.ReadLine(), out int num5);
+                                if (tryParse == true)
+                                {
+                                    int sum = num1 + num2 + num3 + num4 + num5;
+                                    Console.WriteLine($"Your sum is {sum}");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Try again!");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Try again!");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Try again!");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Try again!");
+                    }
+                } else
+                {
+                    Console.WriteLine("Try again!");
+                }
+            } while (tryParse == false);
+        }
+    }
+}
