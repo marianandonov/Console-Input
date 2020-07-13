@@ -1,0 +1,49 @@
+using System;
+using System.Transactions;
+
+namespace AdjustToLeft
+{
+    class AdjustToLeft
+    {
+        static void Main(string[] args)
+        {
+            bool tryParse = false;
+
+            do
+            {
+                Console.Write("Enter a whole number: ");
+                tryParse = int.TryParse(Console.ReadLine(), out int wholeNum);
+                if(tryParse == true)
+                {
+                    Console.Write("Enter a positive real number: ");
+                    tryParse = double.TryParse(Console.ReadLine(), out double realPNum);
+                    if(tryParse == true && realPNum > 0)
+                    {
+                        Console.Write("Enter a negative real number: ");
+                        tryParse = double.TryParse(Console.ReadLine(), out double realNNum);
+                        if(tryParse == true && realNNum < 0)
+                        {
+                            for(int i = 0; i < 10; i++)
+                            {
+                                Console.WriteLine($"{wholeNum,-1:X} {realPNum,-1:F2} {realNNum,-1:F2}");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid number!");
+                            tryParse = false;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid number!");
+                        tryParse = false;
+                    }
+                } else
+                {
+                    Console.WriteLine("Invalid number!");
+                }
+            } while (tryParse == false);
+        }
+    }
+}
