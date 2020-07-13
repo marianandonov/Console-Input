@@ -1,0 +1,41 @@
+using System;
+
+namespace BetweenTwoInts
+{
+    class BetweenTwoInts
+    {
+        static void Main(string[] args)
+        {
+            bool tryParse = false;
+
+            do
+            {
+                Console.Write("Enter your starting number: ");
+                tryParse = int.TryParse(Console.ReadLine(), out int start);
+                if(tryParse == true)
+                {
+                    Console.Write("Enter your final number: ");
+                    tryParse = int.TryParse(Console.ReadLine(), out int final);
+                    if(tryParse == true)
+                    {
+                        Console.WriteLine($"\nStart: {start}");
+                        for(int i = start; i <= final; i++)
+                        {
+                            if(i % 5 == 0)
+                            {
+                                Console.Write(i + " ");
+                            }
+                        }
+                        Console.WriteLine($"\nFinal: {final}");
+                    } else
+                    {
+                        Console.WriteLine("Invalid number!");
+                    }
+                } else
+                {
+                    Console.WriteLine("Invalid number!");
+                }
+            } while (tryParse == false);
+        }
+    }
+}
