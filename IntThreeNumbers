@@ -1,0 +1,44 @@
+using System;
+
+namespace IntThreeNumbers
+{
+    class IntThreeNumbers
+    {
+        static void Main(string[] args)
+        {
+            bool tryParse = false;
+            int sum = 0;
+
+            do
+            {
+                Console.Write("Enter your first number: ");
+                tryParse = int.TryParse(Console.ReadLine(), out int num1);
+                if(tryParse == true)
+                {
+                    Console.Write("Enter your second number: ");
+                    tryParse = int.TryParse(Console.ReadLine(), out int num2);
+                    if(tryParse == true)
+                    {
+                        Console.Write("Enter your third number: ");
+                        tryParse = int.TryParse(Console.ReadLine(), out int num3);
+                        if(tryParse == true)
+                        {
+                            sum = num1 + num2 + num3;
+                            Console.WriteLine($"Your sum is: {sum}");
+                        } else
+                        {
+                            Console.WriteLine("Invalid number!");
+                        }
+
+                    } else
+                    {
+                        Console.WriteLine("Invalid number!");
+                    }
+                } else
+                {
+                    Console.WriteLine("Invalid number!");
+                }
+            } while (tryParse == false);
+        }
+    }
+}
