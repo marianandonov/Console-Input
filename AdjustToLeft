@@ -31,7 +31,7 @@ namespace AdjustToLeft
                         else
                         {
                             Console.WriteLine("Invalid number!");
-                            tryParse = false;
+                            tryParse = false; 
                         }
                     }
                     else
