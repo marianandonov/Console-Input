@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace BiggestFromFive
+{
+    class BiggestFromFive
+    {
+        static void Main(string[] args)
+        {
+            bool tryParse = false;
+            List<int> nums = new List<int>();
+            int counter = 0;
+
+            do
+            {
+                Console.Write("Enter a number: ");
+                tryParse = int.TryParse(Console.ReadLine(), out int i);
+                if(tryParse == true)
+                {
+                    nums.Add(i);
+                    counter++;
+                } else
+                {
+                    Console.WriteLine("Try again!");
+                }
+            } while (counter <= 4);
+
+            Console.WriteLine(nums.Max());
+
+        }
+    }
+}
