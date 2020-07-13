@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ConsoleNNumbers
+{
+    class ConsoleNNumbers
+    {
+        static void Main(string[] args)
+        {
+            bool tryParse = false;
+            int n = 0, counter = 0, sum;
+            List<int> nums = new List<int>();
+
+            do
+            {
+                Console.Write("Enter the value of n: ");
+                tryParse = int.TryParse(Console.ReadLine(), out n);
+                if(tryParse == true)
+                {
+
+                    do
+                    {
+                        Console.Write($"Enter number {counter + 1}: ");
+                        tryParse = int.TryParse(Console.ReadLine(), out int i);
+                        if (tryParse == true)
+                        {
+                            nums.Add(i);
+                            counter++;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Try again!");
+                        }
+                    } while (counter <= n - 1);
+
+                } else
+                {
+                    Console.WriteLine("Try again!");
+                }
+            } while (tryParse == false);
+
+            sum = nums.Sum();
+            Console.WriteLine($"\nYour sum is {sum}");
+        }
+    }
+}
