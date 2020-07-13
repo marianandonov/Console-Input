@@ -1,0 +1,43 @@
+using System;
+
+namespace BiggerNum
+{
+    class BiggerNum
+    {
+        static void Main(string[] args)
+        {
+            bool tryParse = false;
+
+            do
+            {
+                Console.Write("Enter your first number: ");
+                tryParse = int.TryParse(Console.ReadLine(), out int firstNum);
+                if(tryParse == true)
+                {
+                    Console.Write("Enter your second number: ");
+                    tryParse = int.TryParse(Console.ReadLine(), out int secondNum);
+                    if(tryParse == true)
+                    {
+                        Console.WriteLine($"\nYour two numbers: {firstNum} | {secondNum}");
+                        if(firstNum > secondNum)
+                        {
+                            Console.WriteLine($"{firstNum} is bigger than {secondNum}!");
+                        } else if(firstNum < secondNum)
+                        {
+                            Console.WriteLine($"{secondNum} is bigger than {firstNum}!");
+                        } else
+                        {
+                            Console.WriteLine($"{firstNum} and {secondNum} are equal!");
+                        }
+                    } else
+                    {
+                        Console.WriteLine("Invalid number!");
+                    }
+                } else
+                {
+                    Console.WriteLine("Invalid number!");
+                }
+            } while (tryParse == false);
+        }
+    }
+}
