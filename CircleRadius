@@ -1,0 +1,29 @@
+using System;
+
+namespace CircleRadius
+{
+    class CircleRadius
+    {
+        static void Main(string[] args)
+        {
+            bool tryParse = false;
+
+            do
+            {
+                Console.Write("Enter your radius: ");
+                tryParse = double.TryParse(Console.ReadLine(), out double radius);
+                if(tryParse == true)
+                {
+                    double circumference = Math.Round((2 * Math.PI * radius), 2);
+                    double area = Math.Round((Math.PI * Math.Pow(radius, 2)), 2);
+                    
+                    Console.WriteLine($"Your circumference is {circumference}.");
+                    Console.WriteLine($"Your area is {area}.");
+                } else
+                {
+                    Console.WriteLine("Invalid radius!");
+                }
+            } while (tryParse == false);
+        }
+    }
+}
