@@ -1,0 +1,37 @@
+using System;
+
+namespace RealNumSum
+{
+    class RealNumSum
+    {
+        static void Main(string[] args)
+        {
+
+            double sum = 1.0;
+            int n;
+
+            bool tryParse = false;
+
+            do
+            {
+                Console.Write("Enter the final number: ");
+                tryParse = int.TryParse(Console.ReadLine(), out n);
+                if(tryParse == true)
+                {
+                    break;
+                } else
+                {
+                    Console.WriteLine("Try again!");
+                }
+            } while (tryParse == false);
+
+            for (int i = 1; i <= n; i++)
+            {
+                sum += (1.0 / i);
+            }
+
+            Console.WriteLine($"Your sum is {sum:F3}");
+
+        }
+    }
+}
